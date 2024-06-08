@@ -1,0 +1,88 @@
+.element{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 21px 17px;
+
+    max-width: 880px;
+    margin-top: 50px;
+    margin: 0 auto;
+}
+
+.card{
+    background: #FFFFFF;
+    max-width: 282px;
+    height: 361px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card__image{
+    max-width: 100%;
+    width: 282px;
+    height: 282px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.card__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__title{
+    color: #000000; 
+    width: 246px;
+   
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 21px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;  
+    flex: 1;
+}
+
+.card__title:active{
+
+}
+
+.card__heart{
+    width: 21px;
+    height: 18px;
+    padding-right: 18px;
+    flex-shrink: 0;
+}
+
+.card__heart:hover{
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 1024px) {
+    .element{
+        max-width:585px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat (3, 1fr);
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .element{
+        max-width: 320px;
+        grid-template-columns: 100%;
+        row-gap: 20px;
+    }  
+
+    .card{
+        max-width: 282px;
+    }
+}

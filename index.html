@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Around the US é uma rede social onde se compartilha experiências através das fotografias">
+    <meta name="keywords" content="ao redor dos EUA, rede social">
+    <title>Around the U.S</title>
+    <link rel="stylesheet" type="text/css" href="./pages/index.css">
+    <meta name="author" content="Daniela Rocha">
+  </head>
+  <body>
+    <div class="page">
+                            <!--header profile-->
+      <header class="header">
+        <h1 class="header__title">
+          Around<span class="header__title-span">The U.S.</span>
+        </h1>
+      </header>
+
+      <main class="content">
+        <section class="profile">
+          <img
+            src="./images/image.jpg"
+            alt="Foto de Jacques Cousteau"
+            class="profile__avatar">
+              <div class="profile-info">
+                <div class="profile-info__header">
+                  <h2 class="profile-info__name">Jacques Cousteau</h2>
+                  <div class="profile-info__button" id="edit-button">  
+                    <img src="./images/pen.svg" alt="caneta" class="profile-info__button-pen">
+                  </div>
+                  <div class="profile-info__button-add">  
+                    <img src="./images/plus.svg" alt="adicionar" class="profile-info__button-add-icon">
+                  </div>
+                </div>
+                <p class="profile-info__explore">Explorar</p>
+              </div>
+        </section>
+                <!--seção pop up-->
+        <section class="popup">
+          <div class="popup__overlay"></div>
+          <div>
+            <form class="popup__form">
+              <fieldset class="popup__fieldset">
+                <button type="button" class="popup__close-button" id="close-button">
+                  <img
+                    src="./images/close_icon.svg"
+                    alt="Botão fechar"
+                    class="popup__close-icon">
+                </button>
+                <h2 class="popup__title">Editar perfil</h2>
+                <input
+                  type="text"
+                  class="popup__input"
+                  placeholder="Nome"
+                  id="name"
+                  required>
+                
+                <input
+                  type="text"
+                  class="popup__input"
+                  placeholder="Sobre mim"
+                  id="about"
+                  required
+                  >  
+              </fieldset>  
+                <button class="popup__save-button" type="submit">Salvar</button>
+            </form>
+          </div>
+        </section>
+                                  <!--section cards-->   
+        <section class="element">
+           
+            <div class="card">
+                <img 
+                class="card__image" 
+                src="./images/foto_yosemite.jpg" 
+                alt="Foto do vale de Yosemite">
+              <div class="card__content"> 
+                <h2 class="card__title">Vale de Yosemite</h2>
+                <img src="./images/heart.svg" alt="botão de like" class="card__heart">
+              </div>  
+            </div>  
+                 
+            <div class="card">    
+                <img 
+                class="card__image" 
+                src="./images/foto_louise.jpg" 
+                alt="Foto do Lago Louise">
+              <div class="card__content">  
+                <h2 class="card__title">Lago Louise</h2>
+                <img src="./images/heart.svg" alt="botão de like" class="card__heart">
+              </div>  
+            </div>  
+                
+            <div class="card">
+                <img 
+                class="card__image" 
+                src="./images/foto_montanha.jpg" 
+                alt=" Foto das Montanhas ">
+              <div class="card__content">  
+                <h2 class="card__title">Montanhas Care....</h2>
+                <img src="./images/heart.svg" alt="botão de like" class="card__heart">
+              </div>  
+            </div>  
+                
+            <div class="card">
+                <img 
+                class="card__image" 
+                src="./images/foto_latemar.jpg" 
+                alt="Foto de Latemar">
+              <div class="card__content">  
+                <h2 class="card__title">Latemar</h2>
+                <img src="./images/heart.svg" alt="botão de like" class="card__heart">
+              </div>  
+            </div>  
+
+            <div class="card">    
+                <img 
+                class="card__image" 
+                src="./images/foto_vanoise.jpg" 
+                alt="Foto do Vanoise National Park">
+              <div class="card__content">  
+                <h2 class="card__title">Vanoise National Park</h2>
+                <img src="./images/heart.svg" alt="botão de like" class="card__heart">
+              </div>  
+            </div> 
+
+            <div class="card">
+                <img 
+                class="card__image" 
+                src="./images/foto_braies.jpg" 
+                alt="Foto do Lago di Braies">
+              <div class="card__content">  
+                <h2 class="card__title">Lago di Braies</h2>
+                <img src="./images/heart.svg" alt="botão de like" class="card__heart">
+              </div>      
+            </div> 
+        </section>
+      </main> 
+                              <!--footer-->
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2021 Around The U.S.</p>
+      </footer>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
