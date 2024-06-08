@@ -7,6 +7,6 @@
 
 - O projeto também conta com a adição das tecnologias de Media Query, propriedade responsável por adicionar responsividade à página em diferentes telas, CSS grid para deixar a fotos posicionadas em layout de grade, HTML e CSS para construção e estilização do site e por fim JavaScript para que o usuário consiga alterar seus dados através do botão 'editar', onde leva a abertura de um popup para que o usuário consiga fazer essas alterações.
 
-- link para o Github pages:
+- link para o Github pages: https://danirocha95.github.io/web_project_around/
 
 

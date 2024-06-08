@@ -5,7 +5,6 @@
     inset: 0;
     place-content: center;
     background-color: rgba(0, 0, 0, 0.5);
-    
 }
 
 .popup__opened{
@@ -100,19 +99,14 @@
     border: none;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
     .popup {
         min-width: 320px;
         width: 282px;
         height: 322px;
-        display: flex;
-        justify-content: center;
+        padding: 123px 19px 0 19px;
     }
 
-    .popup__form {
-        width: 282px;
-        height: 322px;
-    }
     .popup__close-button {
         width: 26px;
         height: 26px;
