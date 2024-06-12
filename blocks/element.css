@@ -1,4 +1,4 @@
-.element{
+.element {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 21px 17px;
@@ -8,7 +8,7 @@
     margin: 0 auto;
 }
 
-.element-card{
+.element-card {
     background: #FFFFFF;
     max-width: 282px;
     height: 361px;
@@ -25,7 +25,7 @@
     max-width: 100%;
     width: 282px;
     height: 282px;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0 0;
 }
 
 .element-card__content{
@@ -34,20 +34,18 @@
     align-items: center;
 }
 
-.element-card__title{
-    color: #000000; 
+.element-card__title {
+    color: #000000;
     width: 246px;
-   
     font-family: "Inter";
     font-size: 24px;
     font-weight: 900;
     line-height: 1.5;
     text-align: left;
     padding-left: 21px;
-
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;  
+    overflow: hidden;
     flex: 1;
 }
 
