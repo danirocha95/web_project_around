@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Around the US é uma rede social onde se compartilha experiências através das fotografias">
+    <meta name="keywords" content="ao redor dos EUA, rede social">
+    <title>Around the U.S</title>
+    <meta name="author" content="Daniela Rocha">
+  </head>
+  <body>
+    <div class="page">
+     
+      <header class="header">
+        <h1 class="header__title">
+          Around<span class="header__title-span">The U.S.</span>
+        </h1>
+      </header>
+
+      <main class="content"> 
+        <section class="profile">
+          <img
+            src="<%=require('./images/image.jpg')%>"
+            alt="Foto de Jacques Cousteau"
+            class="profile__avatar" 
+          >
+          <div class="profile-info">  
+            <div class="profile-info__header">
+              <h2 class="profile-info__name">Jacques Cousteau</h2>  
+              <div class="profile-info__button" id="edit-button">
+                <img
+                  src="<%=require('./images/pen.svg')%>"
+                  alt="caneta"
+                  class="profile-info__button-pen"  
+                >
+
+              </div>
+            </div>
+            <p class="profile-info__explore">Explorar</p>
+          </div>
+          <div class="profile__button-add" id="local-button">
+            <img
+              src="<%=require('./images/plus.svg')%>"
+              alt="adicionar"
+              class="profile__button-add-icon"
+            >
+          </div>
+        </section>
+                   
+        <section class="cards"></section>
+
+         <template id="card-template">
+          <div class="cards__element">
+            <div class="card__image-container">
+              <img class="cards__image" src="" alt="">
+              <button class="cards-trash__button">
+                <img src="<%=require('./images/trash_icon.svg')%>"
+                alt="Excluir">
+              </button>
+            </div>
+            <div class="cards-description">
+              <button class="cards-description__icon-like">
+                <img src="<%=require('./images/like_icon_off.svg')%>" alt="Curtir">
+                <img src="<%=require('./images/like_icon_on.svg')%>" alt="Curtir" class="card__hide-like-image">
+              </button>
+              <h3 class="cards-description__title"></h3>
+            </div>
+          </div>
+        </template>
+      
+      <div id="image-modal" class="popup-photo">
+        <div class="popup-photo__content">
+            <button class="popup-photo__close-button">
+                <img src="<%=require('./images/close_icon.svg')%>" alt=" botão fechar"> 
+            </button>
+            <img class="popup-photo__image" src="<%=require('./images/placeholder.png')%>" alt="Abre popup de paisagem"> 
+            <h3 class="popup-photo__title"></h3> 
+        </div>
+       </div>
+ 
+        <section class="popup" id="edit-modal">
+          <div class="popup__content">
+            <form class="popup__form" id="edit-form">
+              <fieldset class="popup__fieldset">
+                <button
+                  type="button"
+                  class="popup__close-button"
+                  id="close-button"
+                >
+                  <img
+                    src="<%=require('./images/close_icon.svg')%>" 
+                    alt="Botão fechar"
+                    class="popup__close-icon"
+                  >
+                </button>
+                <h2 class="popup__title">Editar perfil</h2>
+                <input
+                  type="text"
+                  class="popup__input"
+                  placeholder="Nome"
+                  id="name"
+                  value="Jacques Cousteau"
+                  required
+                >
+                <span class="popup__error" id="popup__error-name"></span>
+                <input
+                  type="text"
+                  class="popup__input"
+                  placeholder="Sobre mim"
+                  id="about"
+                  value="Explorar"
+                  required
+                >
+                <span class="popup__error" id="popup__error-about"></span>
+              </fieldset>
+              <button class="popup__save-button" type="submit">Salvar</button>
+            </form>
+          </div>
+        </section>
+        
+        <section class="popup" id="add-modal">
+          <div class="popup__content">
+            <form class="popup__form" id="add-form">
+              <fieldset class="popup__fieldset">
+                <button
+                  type="button"
+                  class="popup__close-button"
+                  id="close-add-button"
+                >
+                  <img
+                    src="<%=require('./images/close_icon.svg')%>" 
+                    alt="Botão fechar"
+                    class="popup__close-icon"
+                  >
+                </button>
+                <h2 class="popup__title">Novo Local</h2>
+                <input
+                  type="text"
+                  name="name"
+                  class="popup__input"
+                  placeholder="Título"
+                  id="local-name"
+                  required
+                >
+                <span class="popup__error" id="popup__error-place"></span>
+
+                <input
+                  type="url"
+                  name="link"
+                  class="popup__input"
+                  placeholder="Link de Imagem"
+                  id="local-image"
+                  required
+                >
+                <span class="popup__error" id="popup__error-link"></span>
+              </fieldset>
+              <button class="popup__save-button" id="popup__button-save" type="submit">Criar</button>
+            </form>
+          </div>
+        </section>
+        
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
+        
+      </footer>
+    </div>
+  </body>
+</html>

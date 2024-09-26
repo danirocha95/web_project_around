@@ -1,0 +1,37 @@
+.header{
+  max-width: 880px;
+  margin: 0 auto;
+  padding-top: 45px;
+  padding-left: 27px;
+  padding-bottom: 41px;
+  border-bottom: 1px solid #545454;
+}
+
+.header__title{
+  width: 173px;
+  height: 33px;
+  color: #FFFFFF;
+  font-family: "Inter";
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: left;
+  margin: 0;
+}
+
+.header__title-span{
+  font-family: "Inter";
+  font-size: 0.3em;
+  vertical-align: top;
+  position: relative;
+  top: -1.1em;
+}
+
+@media screen and (max-width: 720px){
+  .header{
+    max-width: 320px;
+    padding-top: 28px;
+    padding-bottom: 32px;
+    padding-left: 27px;
+  }
+}
