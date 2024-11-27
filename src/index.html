@@ -62,6 +62,7 @@
               <button class="cards-description__icon-like">
                 <img src="<%=require('./images/like_icon_off.svg')%>" alt="Curtir">
                 <img src="<%=require('./images/like_icon_on.svg')%>" alt="Curtir" class="card__hide-like-image">
+                <p class="cards-description__likes"><span class="like-count">0</span></p>
               </button>
               <h3 class="cards-description__title"></h3>
             </div>
@@ -158,6 +159,21 @@
             </form>
           </div>
         </section>
+
+        <div class="popup" id="confirmation-modal">
+          <div class="popup__container">
+              <h2 class="popup__confirm">Tem certeza?</h2>
+              <button class="popup__confirm-button">Sim</button>
+              <button class="popup__close-button"> 
+                  <img
+                      src="<%=require('./images/close_icon.svg')%>" 
+                      alt="Botão fechar"
+                      class="popup__close-icon"
+                  />
+              </button>
+          </div>
+        </div>
+      </div>
         
       </main>
       <footer class="footer">

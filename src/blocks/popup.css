@@ -1,4 +1,4 @@
-.popup-photo{
+.popup, .popup-photo{
     display: none;
     position: fixed;
     top: 0;
@@ -11,13 +11,11 @@
     z-index: 1000;
 }
 
-
 .popup-photo__content{
     position: relative;
 }
 
 .popup-photo__close-button{
-    
     width: 40px;
     height: 40px;
     position: absolute;
@@ -26,7 +24,6 @@
     top: -35px;
     right: -40px;
     cursor: pointer;
-
     display: flex;
     justify-content: center;
 }
@@ -52,17 +49,8 @@
     line-height: 1.2;
 }
 
-.popup{
-    display: none;
-    position: absolute;
-    
-    inset: 0;
-    place-content: center; 
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
 .popup__opened{
-    display: grid;
+    display: flex;
 }
 
 .popup__content{
@@ -77,10 +65,9 @@
 .popup__form{
     background-color: #FFFFFF;
     box-shadow: 0 0 25px 0 #00000026;
-    padding:  36px;
+    padding: 36px;
     border-radius: 10px;
     position: fixed;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -96,7 +83,6 @@
 }
 
 .popup__close-button{
-    
     width: 40px;
     height: 40px;
     position: absolute;
@@ -105,7 +91,6 @@
     top: -35px;
     right: -40px;
     cursor: pointer;
-
     display: flex;
     justify-content: center;
 }
@@ -154,6 +139,51 @@
     background-color: #FFFFFF; 
     color: #a1a1a1; 
     cursor: not-allowed; 
+    opacity: 0.6;
+}
+
+.popup__container {
+    background-color: #FFFFFF;
+    padding: 34px;
+    border-radius: 10px;
+    text-align: center;
+    width: 430px;
+}
+
+.popup__confirm{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.2;
+    text-align: left;
+    padding-bottom: 38px;
+    padding-left: 26px;
+    margin: 0;
+}
+
+.popup__close-button,
+.popup__cancel-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.popup__confirm-button {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px;
+    width: 358px;
+    height: 50px;
+    gap: 0px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.popup__confirm-button:disabled {
+    background-color: #FFFFFF;
+    color: #a1a1a1;
+    cursor: not-allowed;
     opacity: 0.6;
 }
 

@@ -29,21 +29,27 @@
 .cards-description{
     display: flex;
     flex-direction: row-reverse;
-    align-items: center;
     justify-content: space-between;
+    align-items: stretch;
     padding-top: 20px;
     padding-bottom: 24px;
     box-sizing: border-box;
 }
 
+.cards-description__likes {
+    margin: 0;
+    font-size: 14px; /* Tamanho da fonte do contador */
+    color: #000000; /* Cor do texto do contador */
+
+}
+
 .cards-description__title{
     color: #000000;
     font-size: 24px;
-    line-height: 1.5;
     margin: 0;
     padding-left: 21px;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     overflow: hidden;
 }
 
