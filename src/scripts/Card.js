@@ -12,7 +12,7 @@ export default class Card {
         this._api = api;
         this._confirmationPopup = confirmationPopup;
     
-
+        
         // Usando bind para garantir que 'this' se refira à instância correta de Card
         this._handleTrashClick = this._handleTrashClick.bind(this);
     }
