@@ -33,20 +33,12 @@ export class Api {
 
     // Método para atualizar o perfil
     async updateProfile(name, about) {
-        const res = await fetch(`${this._baseUrl}/users/me`, {
+        return this._fetch(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
-            headers: this._headers,
-            body: JSON.stringify({
-                name: name,
-                about: about
-            })
+            body: JSON.stringify({ name, about }),
         });
-        if (!res.ok) {
-            throw new Error(`Erro: ${res.status}`);
-        }
-        return await res.json();
     }
-    
+
     // Método para buscar os cartões iniciais
     async getInitialCards() {
         return this._fetch(`${this._baseUrl}/cards`, { method: 'GET' });
@@ -74,7 +66,12 @@ export class Api {
     async updateProfileAvatar(newAvatarUrl) {
         return this._fetch(`${this._baseUrl}/users/me/avatar`, {
             method: 'PATCH',
-            body: JSON.stringify({ avatar: newAvatarUrl }), // Envia o link da nova foto de perfil
+            body: JSON.stringify({ avatar: newAvatarUrl }),
         });
+    }
+
+    // Método para configurar novos headers dinamicamente
+    setHeaders(newHeaders) {
+        this._headers = { ...this._headers, ...newHeaders };
     }
 }

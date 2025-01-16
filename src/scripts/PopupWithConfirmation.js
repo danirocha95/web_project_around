@@ -15,8 +15,10 @@ export default class PopupWithConfirmation extends Popup {
         });
     }
 
-    open(cardId) {
-        super.open();
-        this._popup.dataset.cardId = cardId; // Armazena o ID do cartão ao abrir o popup
+    open(cardId, cardElement) {
+        this._cardId = cardId;
+        this._cardElement = cardElement;
+        super.open(); 
     }
+    
 }

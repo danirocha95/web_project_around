@@ -22,14 +22,22 @@ const api = new Api({
 
 api.getInitialCards()
     .then(cards => {
-        console.log('Cartões recebidos:', cards);
+       
+        if (!userId) {
+            console.error('userId não está definido ao criar os cartões.');
+            return; // Interrompe se userId estiver null ou undefined
+        }
+
         cards.forEach(cardData => {
+
             const card = new Card({
                 name: cardData.name,
                 link: cardData.link,
                 _id: cardData._id,
-                likes: cardData.likes
-            }, "#card-template", api, handleCardDelete);
+                likes: cardData.likes,
+                owner: cardData.owner,
+                _userId: userId 
+            }, "#card-template", api, confirmationPopup);
             const cardElement = card.createCard(); // Criar o cartão usando o método da classe Card
             cardContainer.append(cardElement); // Adiciona o cartão diretamente ao contêiner
         });
@@ -38,12 +46,19 @@ api.getInitialCards()
         console.log('Erro ao buscar cartões:', err);
     });
 
+    let userId;
+
     async function loadProfile() {
         try {
             const userData = await api.getUserInfo(); // Obtém os dados do usuário da API
             console.log('Dados do usuário:', userData);
+            
+            if (userData && userData._id) {
+                userId = userData._id; // Atribui o userId
+            } else {
+                throw new Error('userData._id não encontrado');
+            }
     
-            // Atualiza a interface com os dados do usuário
             userInfo.setUserInfo({
                 name: userData.name,
                 info: userData.about
@@ -56,18 +71,19 @@ api.getInitialCards()
 loadProfile();
 
 // Função de confirmação de exclusão de cartão
-const confirmationPopup = new PopupWithConfirmation('#confirmation-modal', (cardId) => {
+const confirmationPopup = new PopupWithConfirmation('#confirmation-modal', (cardId, cardElement) => {
     api.deleteCard(cardId)
         .then(() => {
-            console.log(`Cartão ${cardId} excluído com sucesso.`);
-            // Atualiza a interface para remover o cartão excluído
-            const cardElement = document.querySelector(`[data-id="${cardId}"]`);
-            if (cardElement) {
-                cardElement.remove(); // Remove o cartão da interface
-            }
+            
+            cardElement.remove(); // Remove o cartão da interface
+            confirmationPopup.close(); // Fecha o modal de confirmação
         })
-        .catch(err => console.error('Erro ao excluir o cartão:', err));
+        .catch(err => console.error(err));
 });
+
+// Não esqueça de ativar os listeners para o modal de confirmação
+confirmationPopup.setEventListeners();
+
 
 // Função que será passada para o Card, para ser usada no evento de exclusão
 const handleCardDelete = (cardId) => {
@@ -111,7 +127,7 @@ const section = new Section({ items: [], renderer: (data) => addCard(data) }, se
 section.renderItems();
 
 export function addCard(data) {
-    const card = new Card({ name: data.name, link: data.link, _id: data._id, likes: data.likes }, "#card-template", api, handleCardDelete);
+    const card = new Card({ name: data.name, link: data.link, _id: data._id, likes: data.likes }, "#card-template", api, handleCardDelete,);
     const cardElement = card.createCard(); // Usar o método de criação de cartão da classe Card
     if (cardElement) {
         section.addItem(cardElement); // Adiciona o cartão ao contêiner

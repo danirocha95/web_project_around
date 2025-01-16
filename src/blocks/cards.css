@@ -38,8 +38,8 @@
 
 .cards-description__likes {
     margin: 0;
-    font-size: 14px; /* Tamanho da fonte do contador */
-    color: #000000; /* Cor do texto do contador */
+    font-size: 14px; 
+    color: #000000; 
 
 }
 
@@ -58,15 +58,20 @@
     border:transparent;
     background-color: #FFFFFF;
     padding-right: 15px;
+    
+}
+
+.like-icon-on {
+    position: absolute;
+    bottom: 35px;
+    right: 15px;
+    display: none;
 }
 
 .cards-description__icon-like:hover{
     opacity: 60%;
 } 
-
-.card__hide-like-image{
-    display: none;
-}
+ 
 
 .cards-trash__button{
     background: none;
